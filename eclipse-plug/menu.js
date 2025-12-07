@@ -65,7 +65,7 @@ const menuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻* 〕━
 │ ✦ Mᴏᴅᴇ : ${global.botMode || 'public'}
 │ ✦ Pʀᴇғɪx : [ ${prefix} ]
 │ ✦ Usᴇʀ : @${msg.key.remoteJid.split('@')[0]}
-│ ✦ Pʟᴜɢɪɴs : 580+
+│ ✦ Pʟᴜɢɪɴs : 600+
 │ ✦ Vᴇʀsɪᴏɴ : 1.2.5
 │ ✦ Year : 2025 - 2026
 │ ✦ Under Maintainance : true
@@ -193,7 +193,6 @@ const menuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻* 〕━
 ┃✪  ${prefix}dance
 ┃✪  ${prefix}blush
 ┃✪  ${prefix}smile
-┃✪  ${prefix}happy
 ┃✪  ${prefix}smug
 ┃✪  ${prefix}highfive
 ┃✪  ${prefix}lick
@@ -367,6 +366,33 @@ const menuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻* 〕━
 ┃✪  ${prefix}blowjob
 ┃✪  ${prefix}boobs
 ┃✪  ${prefix}cum
+┃✪  ${prefix}dick
+┃✪  ${prefix}anal
+┃✪  ${prefix}black
+┃✪  ${prefix}easter
+┃✪  ${prefix}bottomless
+┃✪  ${prefix}futa
+┃✪  ${prefix}gay
+┃✪  ${prefix}gif
+┃✪  ${prefix}group
+┃✪  ${prefix}fuck
+┃✪  ${prefix}collared
+┃✪  ${prefix}cumslut
+┃✪  ${prefix}DP
+┃✪  ${prefix}domination
+┃✪  ${prefix}extreme
+┃✪  ${prefix}finger
+┃✪  ${prefix}puffies
+┃✪  ${prefix}kiss
+┃✪  ${prefix}lick
+┃✪  ${prefix}pegged
+┃✪  ${prefix}real
+┃✪  ${prefix}suck
+┃✪  ${prefix}tiny
+┃✪  ${prefix}toys
+┃✪  ${prefix}Xmas
+┃✪  ${prefix}tattoo
+┃✪  ${prefix}phgif (name it pornhub)
 ┃✪  ${prefix}feet
 ┃✪  ${prefix}gangbang
 ┃✪  ${prefix}hentai
@@ -559,12 +585,12 @@ const menuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻* 〕━
 ┃✪  ${prefix}screenswidth
 ╰━━━━━━━━━━━━━━━━━⊷
 
-╭━━━✦❮ 🖼️ IMAGE SEARCH & GENERATION ❯✦━⊷
+╭━━━✦❮ 🖼️IMAGE SEARCH & GENERATION ❯✦━⊷
 ┃✪  ${prefix}image
 ┃✪  ${prefix}messi
 ╰━━━━━━━━━━━━━━━━━⊷
 
-╭━━━✦❮ ⚽ FOOTBALL LIVE ❯✦━⊷
+╭━━━✦❮ ⚽FOOTBALL LIVE ❯✦━⊷
 ┃✪  ${prefix}cl_matchday
 ┃✪  ${prefix}cl_news
 ┃✪  ${prefix}cl_table
@@ -704,7 +730,7 @@ const updatedMenuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻*
 │ ✦ Mᴏᴅᴇ : ${global.botMode || 'public'}
 │ ✦ Pʀᴇғɪx : [ ${prefix} ]
 │ ✦ Usᴇʀ : @${msg.key.remoteJid.split('@')[0]}
-│ ✦ Pʟᴜɢɪɴs : 580+
+│ ✦ Pʟᴜɢɪɴs : 600+
 │ ✦ Vᴇʀsɪᴏɴ : 1.2.5
 │ ✦ Year : 2025 - 2026
 │ ✦ Under Maintainance : true
