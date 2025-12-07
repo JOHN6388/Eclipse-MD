@@ -737,7 +737,7 @@ const updatedMenuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻*
 │ ✦ Mᴏᴅᴇ : ${global.botMode || 'public'}
 │ ✦ Pʀᴇғɪx : [ ${prefix} ]
 │ ✦ Usᴇʀ : @${msg.key.remoteJid.split('@')[0]}
-│ ✦ Pʟᴜɢɪɴs : 370+
+│ ✦ Pʟᴜɢɪɴs : 639
 │ ✦ Vᴇʀsɪᴏɴ : 1.2.5
 │ ✦ Year : 2025 - 2026
 │ ✦ Under Maintainance : true
