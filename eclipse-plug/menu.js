@@ -358,63 +358,63 @@ const menuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻* 〕━
 ┃✪  ${prefix}mangaread
 ╰━━━━━━━━━━━━━━━━━⊷
 
-╭━━━✦❮ 🔞 NSFW (18+) ❯✦━⊷
-┃✪  ${prefix}nsfw on/off
-┃✪  ${prefix}ahegao
-┃✪  ${prefix}ass
-┃✪  ${prefix}bdsm
-┃✪  ${prefix}blowjob
-┃✪  ${prefix}boobs
-┃✪  ${prefix}cum
-┃✪  ${prefix}dick
-┃✪  ${prefix}anal
-┃✪  ${prefix}black
-┃✪  ${prefix}easter
-┃✪  ${prefix}bottomless
-┃✪  ${prefix}futa
-┃✪  ${prefix}gay
-┃✪  ${prefix}gif
-┃✪  ${prefix}group
-┃✪  ${prefix}fuck
-┃✪  ${prefix}collared
-┃✪  ${prefix}cumslut
-┃✪  ${prefix}DP
-┃✪  ${prefix}domination
-┃✪  ${prefix}extreme
-┃✪  ${prefix}finger
-┃✪  ${prefix}puffies
-┃✪  ${prefix}kiss
-┃✪  ${prefix}lick
-┃✪  ${prefix}pegged
-┃✪  ${prefix}real
-┃✪  ${prefix}suck
-┃✪  ${prefix}tiny
-┃✪  ${prefix}toys
-┃✪  ${prefix}Xmas
-┃✪  ${prefix}tattoo
-┃✪  ${prefix}phgif (name it pornhub)
-┃✪  ${prefix}feet
-┃✪  ${prefix}gangbang
-┃✪  ${prefix}hentai
-┃✪  ${prefix}lesbian
-┃✪  ${prefix}milf
-┃✪  ${prefix}nekonsfw
-┃✪  ${prefix}oral
-┃✪  ${prefix}pussy
-┃✪  ${prefix}thighs
-┃✪  ${prefix}tits
-┃✪  ${prefix}trap
-┃✪  ${prefix}waifunsfw
-┃✪  ${prefix}yaoi
-┃✪  ${prefix}yuri
-┃✪  ${prefix}hentaivid
-┃✪  ${prefix}hneko
-┃✪  ${prefix}hwaifu
+╭━━━✦❮ 📥 XVIDEO DOWNLOADER ❯✦━⊷
 ┃✪  ${prefix}xvideo
 ┃✪  ${prefix}xx1
 ┃✪  ${prefix}xx2
 ┃✪  ${prefix}xxv1
 ┃✪  ${prefix}xxv2
+╰━━━━━━━━━━━━━━━━━⊷
+
+╭━━━✦❮ 🎌 HENTAI NSFW ❯✦━⊷
+┃✪  ${prefix}hentai
+┃✪  ${prefix}hentaivid
+┃✪  ${prefix}hneko
+┃✪  ${prefix}hwaifu
+┃✪  ${prefix}ahegao
+╰━━━━━━━━━━━━━━━━━⊷
+
+╭━━━✦❮ 🔞 NSFW (18+) ❯✦━⊷
+┃✪  ${prefix}nsfw on/off
+┃✪  ${prefix}69
+┃✪  ${prefix}anal
+┃✪  ${prefix}ass
+┃✪  ${prefix}bdsm
+┃✪  ${prefix}black
+┃✪  ${prefix}boobs
+┃✪  ${prefix}bottomless
+┃✪  ${prefix}collared
+┃✪  ${prefix}cum
+┃✪  ${prefix}cumslut
+┃✪  ${prefix}dick
+┃✪  ${prefix}domination
+┃✪  ${prefix}dp
+┃✪  ${prefix}easter
+┃✪  ${prefix}extreme
+┃✪  ${prefix}feet
+┃✪  ${prefix}finger
+┃✪  ${prefix}futa
+┃✪  ${prefix}gay
+┃✪  ${prefix}gif
+┃✪  ${prefix}groupfuck
+┃✪  ${prefix}kiss
+┃✪  ${prefix}lick
+┃✪  ${prefix}nekonsfw
+┃✪  ${prefix}oral
+┃✪  ${prefix}pegged
+┃✪  ${prefix}pornhub
+┃✪  ${prefix}puffies
+┃✪  ${prefix}pussy
+┃✪  ${prefix}real
+┃✪  ${prefix}suck
+┃✪  ${prefix}tattoo
+┃✪  ${prefix}tiny
+┃✪  ${prefix}toys
+┃✪  ${prefix}trap
+┃✪  ${prefix}waifunsfw
+┃✪  ${prefix}xmas
+┃✪  ${prefix}yaoi
+┃✪  ${prefix}yuri
 ╰━━━━━━━━━━━━━━━━━⊷
 
 ╭━━━✦❮ ☠️ BUG/CRASH COMMANDS ❯✦━⊷
@@ -682,6 +682,7 @@ let categories = {
         'AI': [],
         'AI Reactions': [],
         'Xvideo Downloader': [],
+        'Hentai NSFW': [],
         'NSFW': [],
         'Other': []
       };
@@ -690,14 +691,20 @@ for (const [name, cmd] of commands.entries()) {
         if (uniqueCommandNames.has(cmd.name || name)) continue;
         uniqueCommandNames.add(cmd.name || name);
 
-        // Categorize xvideo commands
-        if (['xx1', 'xx2', 'xxv1', 'xxv2'].includes(cmd.name || name)) {
+        // Categorize xvideo downloader commands
+        if (['xvideo', 'xx1', 'xx2', 'xxv1', 'xxv2'].includes(cmd.name || name)) {
           categories['Xvideo Downloader'].push(cmd.name || name);
           continue;
         }
 
+        // Categorize hentai NSFW commands
+        if (['hentai', 'hentaivid', 'hneko', 'hwaifu', 'ahegao'].includes(cmd.name || name)) {
+          categories['Hentai NSFW'].push(cmd.name || name);
+          continue;
+        }
+
         // Categorize AI reaction commands
-        const aiReactions = ['hug', 'slap', 'pat', 'cry', 'animekill', 'bite', 'yeet', 'bully', 'bonk', 'wink', 'poke', 'cuddle', 'wave', 'dance', 'blush', 'smile', 'happy', 'smug', 'highfive', 'lick', 'neko', 'nom', 'glomp', 'kiss', 'punch']; // Added kiss and punch here
+        const aiReactions = ['hug', 'slap', 'pat', 'cry', 'animekill', 'bite', 'yeet', 'bully', 'bonk', 'wink', 'poke', 'cuddle', 'wave', 'dance', 'blush', 'smile', 'happy', 'smug', 'highfive', 'lick', 'neko', 'nom', 'glomp', 'kiss', 'punch'];
         if (aiReactions.includes(cmd.name || name)) {
           categories['AI Reactions'].push(cmd.name || name);
           continue;
@@ -710,7 +717,7 @@ for (const [name, cmd] of commands.entries()) {
 
 
 const sortedCategories = Object.entries(categories).sort(([keyA], [keyB]) => {
-    const order = ['General', 'Fun', 'Media', 'Group', 'Owner', 'AI', 'AI Reactions', 'Xvideo Downloader', 'NSFW', 'Other'];
+    const order = ['General', 'Fun', 'Media', 'Group', 'Owner', 'AI', 'AI Reactions', 'Xvideo Downloader', 'Hentai NSFW', 'NSFW', 'Other'];
     return order.indexOf(keyA) - order.indexOf(keyB);
 });
 
