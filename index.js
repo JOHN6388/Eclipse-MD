@@ -614,62 +614,10 @@ for (const [name, cmd] of selfCommands.entries()) {
   }
 }
 
-// Log all loaded commands by category with aliases
-console.log(color('\n📋 LOADED PUBLIC COMMANDS:', 'cyan'));
-console.log('═'.repeat(60));
-
-const commandsByCategory = {};
-for (const [name, cmd] of uniqueCommands.entries()) {
-  const category = cmd.category || 'Other';
-  if (!commandsByCategory[category]) commandsByCategory[category] = [];
-  
-  // Create display text with aliases
-  let displayText = name;
-  if (cmd.aliases && cmd.aliases.length > 0) {
-    displayText += color(` [${cmd.aliases.join(', ')}]`, 'gray');
-  }
-  
-  commandsByCategory[category].push({ name, displayText, cmd });
-}
-
-for (const [category, cmds] of Object.entries(commandsByCategory).sort()) {
-  console.log(color(`\n📁 ${category} (${cmds.length}):`, 'yellow'));
-  cmds.sort((a, b) => a.name.localeCompare(b.name))
-    .forEach(({ displayText }) => console.log(color(`  ✓ ${displayText}`, 'white')));
-}
-
-console.log(color(`\n✅ Total: ${uniqueCommands.size} commands loaded\n`, 'green'));
-console.log(color(`📊 Total command invocations (including aliases): ${commands.size}`, 'blue'));
-console.log('═'.repeat(60));
-
-console.log(color('\n📋 LOADED SELF COMMANDS:', 'cyan'));
-console.log('═'.repeat(60));
-
-const selfCommandsByCategory = {};
-for (const [name, cmd] of uniqueSelfCommands.entries()) {
-  const category = cmd.category || 'Self';
-  if (!selfCommandsByCategory[category]) selfCommandsByCategory[category] = [];
-  
-  // Create display text with aliases
-  let displayText = name;
-  if (cmd.aliases && cmd.aliases.length > 0) {
-    displayText += color(` [${cmd.aliases.join(', ')}]`, 'gray');
-  }
-  
-  selfCommandsByCategory[category].push({ name, displayText, cmd });
-}
-
-for (const [category, cmds] of Object.entries(selfCommandsByCategory).sort()) {
-  console.log(color(`\n📁 ${category} (${cmds.length}):`, 'yellow'));
-  cmds.sort((a, b) => a.name.localeCompare(b.name))
-    .forEach(({ displayText }) => console.log(color(`  ✓ ${displayText}`, 'white')));
-}
-
-console.log(color(`\n✅ Total: ${uniqueSelfCommands.size} self commands loaded\n`, 'green'));
-console.log(color(`📊 Total self command invocations (including aliases): ${selfCommands.size}`, 'blue'));
-console.log('═'.repeat(60));
-
-console.log(color(`\n🎯 GRAND TOTAL: ${commands.size + selfCommands.size} command invocations (commands + aliases)`, 'magenta'));
+// Simplified command loading summary
+console.log(color(`\n✅ ${uniqueCommands.size} public commands loaded`, 'green'));
+console.log(color(`✅ ${uniqueSelfCommands.size} self commands loaded`, 'green'));
+console.log(color(`\n🎯 TOTAL: ${commands.size + selfCommands.size} command invocations (including aliases)\n`, 'magenta'));
 console.log('═'.repeat(60));
 
 // Display loaded commands in test mode
