@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 
 // Generic NSFW fetcher with multiple API fallbacks
@@ -39,7 +38,7 @@ function createNSFWCommand(name, category, description) {
         });
 
         const url = await fetchNSFW(category);
-        
+
         await sock.sendMessage(dest, {
           image: { url },
           caption: `🔞 *${description}*\n\n⚠️ NSFW Content`
@@ -58,7 +57,7 @@ function createNSFWCommand(name, category, description) {
   };
 }
 
-// Export all NSFW commands
+// Export all NSFW commands - single lowercase names only
 export default [
   createNSFWCommand('trap', 'trap', 'Trap content'),
   createNSFWCommand('waifu', 'waifu', 'NSFW Waifu'),
@@ -66,26 +65,11 @@ export default [
   createNSFWCommand('cum', 'cum', 'Cum content'),
   createNSFWCommand('pussy', 'pussy', 'Pussy content'),
   createNSFWCommand('feet', 'feet', 'Feet content'),
-  createNSFWCommand('lewdneko', 'neko', 'Lewd Neko'),
-  createNSFWCommand('solo', 'solo', 'Solo content'),
-  createNSFWCommand('gasm', 'gasm', 'Orgasm content'),
   createNSFWCommand('anal', 'anal', 'Anal content'),
-  createNSFWCommand('hentai', 'hentai', 'Hentai content'),
   createNSFWCommand('boobs', 'boobs', 'Boobs content'),
   createNSFWCommand('ass', 'ass', 'Ass content'),
-  createNSFWCommand('panties', 'panties', 'Panties content'),
-  createNSFWCommand('tentacle', 'tentacles', 'Tentacle content'),
   createNSFWCommand('yuri', 'yuri', 'Yuri content'),
   createNSFWCommand('bdsm', 'bdsm', 'BDSM content'),
-  createNSFWCommand('cuckold', 'cuckold', 'Cuckold content'),
-  createNSFWCommand('ero', 'ero', 'Erotic content'),
-  createNSFWCommand('femdom', 'femdom', 'Femdom content'),
-  createNSFWCommand('foot', 'foot', 'Foot fetish content'),
-  createNSFWCommand('glasses', 'glasses', 'Glasses content'),
-  createNSFWCommand('masturbation', 'masturbation', 'Masturbation content'),
-  createNSFWCommand('orgy', 'orgy', 'Orgy content'),
-  createNSFWCommand('public', 'public', 'Public content'),
-  createNSFWCommand('69', '69', '69 position content'),
   createNSFWCommand('dick', 'dick', 'Dick content'),
   createNSFWCommand('black', 'black', 'Black content'),
   createNSFWCommand('easter', 'easter', 'Easter content'),
@@ -110,5 +94,6 @@ export default [
   createNSFWCommand('toys', 'toys', 'Toys content'),
   createNSFWCommand('xmas', 'xmas', 'Xmas content'),
   createNSFWCommand('tattoo', 'tattoo', 'Tattoo content'),
-  createNSFWCommand('pornhub', 'phgif', 'Pornhub GIF content')
+  createNSFWCommand('pornhub', 'phgif', 'Pornhub GIF content'),
+  createNSFWCommand('oral', 'oral', 'Oral content')
 ];
