@@ -662,99 +662,9 @@ const menuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻* 〕━
 
 > ᴘᴏᴡᴇʀᴇᴅ ʙʏ ${config.botName}©`;
 
-// Load commands from files
-const commandFiles = fs.readdirSync('./eclipse-plug').filter(file => file.endsWith('.js'));
-const commands = new Map();
-const uniqueCommandNames = new Set();
-
-for (const file of commandFiles) {
-    const commandModule = await import(`./${file}`);
-    const command = commandModule.default;
-    commands.set(command.name || file.replace('.js', ''), command);
-}
-
-let categories = {
-        'General': [],
-        'Fun': [],
-        'Media': [],
-        'Group': [],
-        'Owner': [],
-        'AI': [],
-        'AI Reactions': [],
-        'Xvideo Downloader': [],
-        'Hentai NSFW': [],
-        'NSFW': [],
-        'Other': []
-      };
-
-for (const [name, cmd] of commands.entries()) {
-        if (uniqueCommandNames.has(cmd.name || name)) continue;
-        uniqueCommandNames.add(cmd.name || name);
-
-        // Categorize xvideo downloader commands
-        if (['xvideo', 'xx1', 'xx2', 'xxv1', 'xxv2'].includes(cmd.name || name)) {
-          categories['Xvideo Downloader'].push(cmd.name || name);
-          continue;
-        }
-
-        // Categorize hentai NSFW commands
-        if (['hentai', 'hentaivid', 'hneko', 'hwaifu', 'ahegao'].includes(cmd.name || name)) {
-          categories['Hentai NSFW'].push(cmd.name || name);
-          continue;
-        }
-
-        // Categorize AI reaction commands
-        const aiReactions = ['hug', 'slap', 'pat', 'cry', 'animekill', 'bite', 'yeet', 'bully', 'bonk', 'wink', 'poke', 'cuddle', 'wave', 'dance', 'blush', 'smile', 'happy', 'smug', 'highfive', 'lick', 'neko', 'nom', 'glomp', 'kiss', 'punch'];
-        if (aiReactions.includes(cmd.name || name)) {
-          categories['AI Reactions'].push(cmd.name || name);
-          continue;
-        }
-
-        const category = cmd.category || 'Other';
-        if (!categories[category]) categories[category] = [];
-        categories[category].push(cmd.name || name);
-      }
 
 
-const sortedCategories = Object.entries(categories).sort(([keyA], [keyB]) => {
-    const order = ['General', 'Fun', 'Media', 'Group', 'Owner', 'AI', 'AI Reactions', 'Xvideo Downloader', 'Hentai NSFW', 'NSFW', 'Other'];
-    return order.indexOf(keyA) - order.indexOf(keyB);
-});
 
-let menuSections = '';
-for (const [categoryName, commandList] of sortedCategories) {
-    if (commandList.length > 0) {
-        menuSections += `\n╭━━━✦❮ ${categoryName.toUpperCase()} ❯✦━⊷\n`;
-        commandList.forEach(command => {
-            menuSections += `┃✪  ${prefix}${command}\n`;
-        });
-        menuSections += '╰━━━━━━━━━━━━━━━━━⊷';
-    }
-}
-
-const updatedMenuText = `╔╭━━〔 *𝔼𝕔𝕝𝕚𝕡𝕤𝕖 𝕄𝔻* 〕━━╮
-
-│ ✦ Mᴏᴅᴇ : ${global.botMode || 'public'}
-│ ✦ Pʀᴇғɪx : [ ${prefix} ]
-│ ✦ Usᴇʀ : @${msg.key.remoteJid.split('@')[0]}
-│ ✦ Pʟᴜɢɪɴs : 639
-│ ✦ Vᴇʀsɪᴏɴ : 1.2.5
-│ ✦ Year : 2025 - 2026
-│ ✦ Under Maintainance : true
-│ ✦ Bot-Site : https://eclipse-md-horlapookie.zone.id
-│ ✦ Uᴘᴛɪᴍᴇ : ${uptimeString}
-│ ✦ Tɪᴍᴇ Nᴏᴡ : ${currentTime}
-│ ✦ Dᴀᴛᴇ Tᴏᴅᴀʏ : ${currentDate}
-│ ✦ Pʟᴀᴛғᴏʀᴍ : ${platformName}
-│ ✦ Tɪᴍᴇ Zᴏɴᴇ : Africa/Lagos
-│ ✦ Sᴇʀᴠᴇʀ Rᴀᴍ : ${memoryPercent}% Used
-╰─────────────────╯${menuSections}\n\n
-╔══════════════════════════════════╗
-║   📞 NEED HELP? CONTACT SUPPORT  ║
-║  🌐 www.eclipse-support.zone.id  ║
-╚══════════════════════════════════╝
-
-> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ${config.botName}©`;
 
 
 const interactiveButtons = [
@@ -838,7 +748,7 @@ const interactiveMessage = {
 
       const menuMessage = {
         image: { url: mediaUrls.menuImage },
-        caption: updatedMenuText + linksText,
+        caption: menuText + linksText,
         contextInfo: {
           forwardingScore: 999,
           isForwarded: true,
@@ -871,7 +781,7 @@ const interactiveMessage = {
 📞 *Telegram:* https://t.me/horlapookie
 ━━━━━━━━━━━━━━━━━━━━━━`;
 
-      await sock.sendMessage(from, { text: updatedMenuText + linksText }, { quoted: msg });
+      await sock.sendMessage(from, { text: menuText + linksText }, { quoted: msg });
     }
 
 }
